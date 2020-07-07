@@ -98,7 +98,8 @@ class HashTable:
         Implement this.
         """
         # Your code here
-        self.put(key, None)
+        i = self.hash_index(key)
+        self.storage[i] = None
 
     def get(self, key):
         """
@@ -112,7 +113,6 @@ class HashTable:
         slot = self.hash_index(key)
         hashEntry = self.storage[slot]
         if hashEntry is not None:
-            print(hashEntry)
             return hashEntry.value
         else:
             return None
@@ -126,16 +126,6 @@ class HashTable:
         Implement this.
         """
         # Your code here
-
-ht = HashTable(8)
-ht.put("key-0", "val-0")
-ht.put("key-1", "val-1")
-ht.put("key-2", "val-2")
-ht.put("key-3", "val-3")
-ht.put("key-4", "val-4")
-ht.put("key-5", "val-5")
-ht.put("key-6", "val-6")
-print(ht.get("key-0"))
 
 if __name__ == "__main__":
     ht = HashTable(8)
